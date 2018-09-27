@@ -12,6 +12,9 @@ System.out.println("1.");
 System.out.println("2a.");
    int[][] ary4 = new int[][] {{3, 5, 3, 6},{4, 7, 5, 1},{8, 4, 3, 6}};
     fill2D(ary4);
+System.out.println("2b.");
+   int[][] ary5 = new int[][] {{-6, 5, -3, 6},{4, -8, 5, 1},{8, 4, -10, 6}};
+    fill2DCopy(ary5);
 }
   public static void printArray (int[] ary) {
     for (int i = 0; i < ary.length; i = i + 1) {
@@ -43,6 +46,18 @@ System.out.println("2a.");
     for (int i = 0; i < vals.length; i = i + 1) {
       for (int k = 0; k < vals[i].length; k = k + 1) {
         if (i == k) {
+          vals[i][k] = 3;
+        } else {
+          vals[i][k] = 1;
+        }
+      }
+    }
+    printArray(vals);
+  }
+  public static void fill2DCopy(int[][] vals) {
+    for (int i = 0; i < vals.length; i = i + 1) {
+      for (int k = 0; k < vals[i].length; k = k + 1) {
+        if (vals[i][k] < 0) {
           vals[i][k] = 3;
         } else {
           vals[i][k] = 1;
